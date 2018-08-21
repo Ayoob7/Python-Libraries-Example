@@ -46,3 +46,22 @@ ts = df['time']
 localizedTime = ts.tz_localize(pytz.UTC)
 sriLankanTime = localizedTime.tz_convert(pytz.timezone('Asia/Colombo'))
 print(sriLankanTime)
+
+
+# Fill NaN values of a data set with 0 
+df.fillna(0)
+
+# Replace all NaN elements in column ‘A’, ‘B’, ‘C’, and ‘D’, with 0, 1, 2, and 3 respectively.
+values = {'A': 0, 'B': 1, 'C': 2, 'D': 3}
+df.fillna(value=values)
+
+# to check whether a column has null
+pd.isna(np.nan) => True
+
+# https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.dropna.html 
+# dropna drops the specified values with null values
+
+
+# https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.drop_duplicates.html
+# https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.duplicated.html
+# to see whether a coloumn is duplicated and to drop duplicates
